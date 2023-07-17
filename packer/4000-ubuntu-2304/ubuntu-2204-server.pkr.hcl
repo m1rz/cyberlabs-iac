@@ -73,7 +73,7 @@ source "proxmox-iso" "ubuntu-2304" {
     boot_wait = "5s"
 
     http_directory = "http"
-    http_bind_address = "192.168.188.185"
+    http_bind_address = "0.0.0.0"
     http_port_min = 8000
     http_port_max = 9000
 

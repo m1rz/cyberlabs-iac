@@ -48,7 +48,7 @@ source "proxmox-iso" "ubuntu-2304" {
         type = "sata"
     }
 
-    cores = "1"
+    cores = "2"
 
     memory = "2048"
 
@@ -70,7 +70,7 @@ source "proxmox-iso" "ubuntu-2304" {
         "<f10><wait>"
     ]
     boot = "c"
-    boot_wait = "10s"
+    boot_wait = "5s"
 
     http_directory = "http"
     http_bind_address = "0.0.0.0"
@@ -80,7 +80,7 @@ source "proxmox-iso" "ubuntu-2304" {
     ssh_username = "ciuser"
     ssh_password = "ciuser"
 
-    ssh_timeout = "20m"
+    ssh_timeout = "30m"
 
 }
 
