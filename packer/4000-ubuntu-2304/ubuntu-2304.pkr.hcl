@@ -80,7 +80,7 @@ source "proxmox-iso" "ubuntu-2304" {
     ssh_username = "ciuser"
     ssh_password = "ciuser"
 
-    ssh_timeout = "30m"
+    ssh_timeout = "60m"
 
 }
 
