@@ -66,7 +66,7 @@ source "proxmox-iso" "ubuntu-2304" {
         "e<wait>",
         "<down><down><down><end>",
         "<bs><bs><bs><bs><wait>",
-        "autoinstall ds=nocloud-net;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ --- <wait>",
+        "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ --- <wait>",
         "<f10><wait>"
       ]
     boot = "c"
