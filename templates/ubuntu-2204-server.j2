@@ -1,0 +1,32 @@
+{# templates/ubuntu-2204-server.j2 #}
+
+resource "proxmox_vm_qemu" "ubuntu_2204_server" {
+
+    name = "{{ name }}"
+    desc = "{{ desc }}"
+    vmid = "{{ vmid }}"
+    target_node = "proxmox"
+
+    clone = "ubuntu-2204-server"
+    clone_wait = 20
+    cores = {{ cores }}
+    sockets = 1
+    cpu = "host"
+    memory = {{ memory }}
+
+    network {
+        bridge = "vmbr0"
+        model = "virtio"
+    }
+
+    disk {
+        storage = "local-lvm"
+        type = "virtio"
+        size = "10740M"
+    }
+
+    os_type = "cloud-init"
+    ciuser = "{{ username }}"
+    cipassword = "{{ password }}"
+
+}
