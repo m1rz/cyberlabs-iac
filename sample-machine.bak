@@ -1,20 +1,16 @@
-{# templates/ubuntu-2204-server.j2 #}
+resource "proxmox_vm_qemu" "ubuntu_2204_1" {
 
-resource "proxmox_vm_qemu" "ubuntu_2204_server" {
-
-    name = "{{ name }}"
-    desc = <<-EOT
-    {{ desc }}
-    EOT
-    vmid = "{{ vmid }}"
+    name = "ubuntu-2204-1"
+    desc = "test server"
+    vmid = "201"
     target_node = "proxmox"
 
     clone = "ubuntu-2204-server"
     clone_wait = 20
-    cores = {{ cores }}
+    cores = 2
     sockets = 1
     cpu = "host"
-    memory = {{ memory }}
+    memory = 2048
 
     network {
         bridge = "vmbr0"
@@ -28,7 +24,7 @@ resource "proxmox_vm_qemu" "ubuntu_2204_server" {
     }
 
     os_type = "cloud-init"
-    ciuser = "{{ username }}"
-    cipassword = "{{ password }}"
+    ciuser = "cinit"
+    cipassword = "cinit"
 
 }
