@@ -1,6 +1,6 @@
 {# templates/ubuntu-2204-server.j2 #}
 
-resource "proxmox_vm_qemu" "ubuntu_2204_server" {
+resource "proxmox_vm_qemu" "{{ name_underscore }}" {
 
     name = "{{ name }}"
     desc = <<-EOT
